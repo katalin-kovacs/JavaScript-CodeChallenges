@@ -33,3 +33,31 @@ class Book {
 /*
   WRITE YOUR SOLUTION HERE
 */
+
+class TechnicalBook extends Book {
+  constructor(title, author, ISBN, numCopies, edition) {
+    super(title, author, ISBN, numCopies);
+    this.edition = edition;
+  }
+
+  getEdition() {
+    return `The current version of this book is ${this.edition}.`;
+  }
+}
+
+const HungerGames = new Book("Hunger Games", "Suzanne Collins", 123919, 5);
+console.log(HungerGames.availability);
+HungerGames.restock(12);
+console.log(HungerGames.availability);
+HungerGames.sell(17);
+console.log(HungerGames.availability);
+
+const CrackingTheCodingInterview = new TechnicalBook(
+  "Cracking The Coding Interview",
+  "Gayle Laackmann McDowell",
+  1209123,
+  7,
+  "2.3"
+);
+console.log(CrackingTheCodingInterview.availability);
+console.log(CrackingTheCodingInterview.getEdition());
